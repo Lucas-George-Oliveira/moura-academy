@@ -1,0 +1,3221 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moura Academy | Curso Presencial de Martelinho de Ouro</title>
+    <meta
+      name="description"
+      content="Aprenda martelinho de ouro na Moura Academy. Formação presencial intensiva de 7 dias em Araguaína-TO, com Arthur Moura."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0A0A0A" />
+    <link rel="canonical" href="https://mouraacademy.com.br/" />
+
+    <!-- Open Graph / Compartilhamento -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Moura Academy" />
+    <meta
+      property="og:title"
+      content="Moura Academy | Curso Presencial de Martelinho de Ouro"
+    />
+    <meta
+      property="og:description"
+      content="Aprenda martelinho de ouro na Moura Academy. Formação presencial intensiva de 7 dias em Araguaína-TO, com Arthur Moura."
+    />
+    <meta property="og:url" content="https://mouraacademy.com.br/" />
+    <meta
+      property="og:image"
+      content="https://mouraacademy.com.br/assets/images/og-moura-academy.jpg"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Moura Academy | Curso Presencial de Martelinho de Ouro"
+    />
+    <meta
+      name="twitter:description"
+      content="Formação presencial intensiva de 7 dias em Araguaína-TO, com Arthur Moura. Aprenda mesmo começando do zero."
+    />
+
+    <!-- Tipografia Institucional -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS + Configuração da Marca -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind-config.js"></script>
+
+    <!-- Estilos Customizados -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"
+    ></script>
+    <script src="script.js"></script>
+
+    <!-- Dados Estruturados Schema.org (Instituição de Ensino e Curso) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "EducationalOrganization",
+            "@id": "https://mouraacademy.com.br/#organization",
+            "name": "Moura Academy",
+            "description": "Academia presencial de formação profissional em martelinho de ouro localizada em Araguaína, Tocantins.",
+            "url": "https://mouraacademy.com.br/",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Araguaína",
+              "addressRegion": "TO",
+              "addressCountry": "BR"
+            },
+            "founder": {
+              "@type": "Person",
+              "name": "Nathaly"
+            }
+          },
+          {
+            "@type": "Course",
+            "name": "Formação Profissional em Martelinho de Ouro",
+            "description": "Formação presencial e intensiva de 7 dias para aprender martelinho de ouro na prática, mesmo sem conhecimento prévio sobre automóveis.",
+            "provider": {
+              "@id": "https://mouraacademy.com.br/#organization"
+            },
+            "instructor": {
+              "@type": "Person",
+              "name": "Arthur Moura"
+            },
+            "hasCourseInstance": {
+              "@type": "CourseInstance",
+              "courseMode": "onsite",
+              "courseWorkload": "P7D",
+              "location": {
+                "@type": "Place",
+                "name": "Moura Academy",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Araguaína",
+                  "addressRegion": "TO",
+                  "addressCountry": "BR"
+                }
+              }
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body
+    x-data="academyApp()"
+    x-init="init()"
+    class="bg-dark-900 text-white font-body antialiased selection:bg-gold-500 selection:text-dark-900 overflow-x-hidden"
+  >
+    <!-- =====================================================================
+         HEADER DINÂMICO
+    ====================================================================== -->
+    <header
+      :class="scrolled ? 'bg-dark-900/95 backdrop-blur-md border-b border-gold-500/20 py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.8)]' : 'bg-transparent py-6 border-b border-transparent'"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between"
+      >
+        <!-- Logotipo Moura Academy -->
+        <a
+          href="#inicio"
+          class="flex items-center gap-3 group focus:outline-none"
+          aria-label="Moura Academy - Início"
+        >
+          <div
+            class="w-10 h-10 border border-gold-500/60 bg-dark-800 flex items-center justify-center rounded-[2px] group-hover:border-gold-500 transition-colors"
+          >
+            <span
+              class="font-serif font-bold text-xl gold-text-gradient tracking-wider"
+              >M</span
+            >
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="font-sans font-extrabold text-base sm:text-lg tracking-[0.2em] text-white leading-none"
+              >MOURA</span
+            >
+            <span
+              class="font-serif text-[10px] sm:text-[11px] tracking-[0.32em] text-gold-500 uppercase mt-1 leading-none"
+              >Academy</span
+            >
+          </div>
+        </a>
+
+        <!-- Navegação Desktop -->
+        <nav
+          class="hidden lg:flex items-center gap-7"
+          aria-label="Navegação Principal"
+        >
+          <a href="#inicio" class="nav-link">Início</a>
+          <a href="#academia" class="nav-link">A Academia</a>
+          <a href="#professor" class="nav-link">O Professor</a>
+          <a href="#formacao" class="nav-link">Formação</a>
+          <a href="#trabalhos" class="nav-link">Trabalhos</a>
+          <a href="#depoimentos" class="nav-link">Depoimentos</a>
+          <a href="#contato" class="nav-link">Contato</a>
+        </nav>
+
+        <!-- CTA Header & Menu Mobile -->
+        <div class="flex items-center gap-3">
+          <button
+            type="button"
+            @click="openEnrollModal('Header')"
+            class="hidden sm:inline-flex items-center justify-center btn-premium px-5 py-2.5 text-xs"
+          >
+            Inscreva-se
+          </button>
+
+          <!-- Botão Hambúrguer Mobile -->
+          <button
+            type="button"
+            @click="mobileMenuOpen = !mobileMenuOpen"
+            :aria-expanded="mobileMenuOpen.toString()"
+            aria-controls="mobile-menu"
+            aria-label="Abrir ou fechar menu de navegação"
+            class="lg:hidden w-11 h-11 border border-gold-500/30 bg-dark-800/80 flex flex-col items-center justify-center gap-1.5 rounded-[2px] text-white hover:border-gold-500 transition-colors"
+          >
+            <span
+              :class="mobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''"
+              class="w-5 h-[1.5px] bg-gold-500 transition-transform duration-300"
+            ></span>
+            <span
+              :class="mobileMenuOpen ? 'opacity-0' : ''"
+              class="w-5 h-[1.5px] bg-white transition-opacity duration-300"
+            ></span>
+            <span
+              :class="mobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''"
+              class="w-5 h-[1.5px] bg-gold-500 transition-transform duration-300"
+            ></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Menu Mobile Expansível -->
+      <div
+        id="mobile-menu"
+        x-show="mobileMenuOpen"
+        x-transition:enter="transition ease-out duration-250"
+        x-transition:enter-start="opacity-0 -translate-y-3"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-3"
+        @click.away="mobileMenuOpen = false"
+        style="display: none"
+        class="lg:hidden bg-dark-900/98 backdrop-blur-xl border-b border-gold-500/25 px-6 pt-4 pb-8"
+      >
+        <nav
+          class="flex flex-col divide-y divide-white/5"
+          aria-label="Navegação Mobile"
+        >
+          <a
+            href="#inicio"
+            @click="mobileMenuOpen = false"
+            class="py-3.5 text-xs font-sans font-semibold uppercase tracking-[0.18em] text-gray-200 hover:text-gold-500"
+            >Início</a
+          >
+          <a
+            href="#academia"
+            @click="mobileMenuOpen = false"
+            class="py-3.5 text-xs font-sans font-semibold uppercase tracking-[0.18em] text-gray-200 hover:text-gold-500"
+            >A Academia</a
+          >
+          <a
+            href="#professor"
+            @click="mobileMenuOpen = false"
+            class="py-3.5 text-xs font-sans font-semibold uppercase tracking-[0.18em] text-gray-200 hover:text-gold-500"
+            >O Professor</a
+          >
+          <a
+            href="#formacao"
+            @click="mobileMenuOpen = false"
+            class="py-3.5 text-xs font-sans font-semibold uppercase tracking-[0.18em] text-gray-200 hover:text-gold-500"
+            >Formação</a
+          >
+          <a
+            href="#trabalhos"
+            @click="mobileMenuOpen = false"
+            class="py-3.5 text-xs font-sans font-semibold uppercase tracking-[0.18em] text-gray-200 hover:text-gold-500"
+            >Trabalhos</a
+          >
+          <a
+            href="#depoimentos"
+            @click="mobileMenuOpen = false"
+            class="py-3.5 text-xs font-sans font-semibold uppercase tracking-[0.18em] text-gray-200 hover:text-gold-500"
+            >Depoimentos</a
+          >
+          <a
+            href="#contato"
+            @click="mobileMenuOpen = false"
+            class="py-3.5 text-xs font-sans font-semibold uppercase tracking-[0.18em] text-gray-200 hover:text-gold-500"
+            >Contato</a
+          >
+        </nav>
+        <div class="mt-6 flex flex-col gap-3">
+          <button
+            type="button"
+            @click="mobileMenuOpen = false; openEnrollModal('Menu Mobile')"
+            class="w-full btn-premium py-3.5 text-xs text-center"
+          >
+            Quero Me Inscrever
+          </button>
+          <a
+            :href="getWhatsAppUrl('duvidas')"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full btn-secondary py-3.5 text-xs text-center"
+          >
+            Tirar Dúvidas no WhatsApp
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- =====================================================================
+             SEÇÃO 01 — HERO / APRESENTAÇÃO PRINCIPAL
+        ====================================================================== -->
+      <section
+        id="inicio"
+        class="relative min-h-screen flex items-center pt-28 pb-16 lg:pt-32 lg:pb-20 overflow-hidden bg-dark-900"
+      >
+        <!-- Iluminação Cinematográfica Dourada e Linhas Arquitetônicas -->
+        <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div
+            class="absolute -top-24 right-0 w-[620px] h-[620px] rounded-full bg-gold-500/10 blur-[140px]"
+          ></div>
+          <div
+            class="absolute bottom-0 -left-32 w-[480px] h-[480px] rounded-full bg-gold-600/5 blur-[120px]"
+          ></div>
+          <div class="hero-grid-pattern absolute inset-0 opacity-25"></div>
+        </div>
+
+        <div
+          class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
+        >
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center"
+          >
+            <!-- Coluna Narrativa Principal -->
+            <div class="lg:col-span-7 reveal-up">
+              <!-- Identificação Institucional -->
+              <div
+                class="inline-flex items-center gap-3 px-3.5 py-2 border border-gold-500/35 bg-dark-800/90 rounded-[2px] mb-6"
+              >
+                <span class="w-2 h-2 bg-gold-500 rotate-45"></span>
+                <span
+                  class="font-sans text-[11px] sm:text-xs font-bold tracking-[0.22em] text-gold-100 uppercase"
+                >
+                  FORMAÇÃO PROFISSIONAL EM MARTELINHO DE OURO
+                </span>
+              </div>
+
+              <!-- Headline Principal -->
+              <h1
+                class="font-sans font-black text-3xl sm:text-5xl lg:text-[3.4rem] uppercase tracking-tight leading-[1.08] text-white mb-6"
+              >
+                APRENDA UMA TÉCNICA. <br class="hidden sm:inline" />
+                <span class="gold-text-gradient"
+                  >DESENVOLVA UMA PROFISSÃO.</span
+                >
+              </h1>
+
+              <!-- Texto de Apoio -->
+              <p
+                class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl mb-8"
+              >
+                Uma formação presencial e intensiva para quem deseja aprender
+                martelinho de ouro, mesmo começando do absoluto zero.
+              </p>
+
+              <!-- Destaque Visual: 7 Dias Intensivos -->
+              <div
+                class="inline-flex items-center gap-4 border-l-2 border-gold-500 bg-dark-800/90 border-y border-r border-gold-500/20 px-5 py-3.5 rounded-[2px] mb-9 gold-glow"
+              >
+                <div
+                  class="font-serif font-bold text-3xl sm:text-4xl text-gold-500 leading-none"
+                >
+                  07
+                </div>
+                <div class="h-8 w-[1px] bg-gold-500/30"></div>
+                <div>
+                  <p
+                    class="font-sans font-extrabold text-xs sm:text-sm uppercase tracking-[0.16em] text-white"
+                  >
+                    DIAS INTENSIVOS DE FORMAÇÃO
+                  </p>
+                  <p class="text-xs text-gray-400 mt-0.5">
+                    Imersão teórica e prática presencial em oficina
+                  </p>
+                </div>
+              </div>
+
+              <!-- Botões de Ação -->
+              <div
+                class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12"
+              >
+                <button
+                  type="button"
+                  @click="openEnrollModal('Hero Principal')"
+                  class="btn-premium px-8 py-4 text-xs sm:text-sm text-center cursor-pointer"
+                >
+                  QUERO ME INSCREVER
+                </button>
+                <a
+                  href="#formacao"
+                  class="btn-secondary px-8 py-4 text-xs sm:text-sm text-center"
+                >
+                  CONHEÇA A FORMAÇÃO
+                </a>
+              </div>
+
+              <!-- Resumo da Formação -->
+              <div
+                class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-7 border-t border-gold-500/20"
+              >
+                <div>
+                  <span
+                    class="block text-[10px] font-sans uppercase tracking-[0.2em] text-gold-500 mb-1"
+                    >Modalidade</span
+                  >
+                  <span
+                    class="font-sans font-bold text-xs sm:text-sm text-white uppercase"
+                    >Curso presencial</span
+                  >
+                </div>
+                <div>
+                  <span
+                    class="block text-[10px] font-sans uppercase tracking-[0.2em] text-gold-500 mb-1"
+                    >Local</span
+                  >
+                  <span
+                    class="font-sans font-bold text-xs sm:text-sm text-white uppercase"
+                    >Araguaína – TO</span
+                  >
+                </div>
+                <div>
+                  <span
+                    class="block text-[10px] font-sans uppercase tracking-[0.2em] text-gold-500 mb-1"
+                    >Duração</span
+                  >
+                  <span
+                    class="font-sans font-bold text-xs sm:text-sm text-white uppercase"
+                    >7 dias intensivos</span
+                  >
+                </div>
+                <div>
+                  <span
+                    class="block text-[10px] font-sans uppercase tracking-[0.2em] text-gold-500 mb-1"
+                    >Instrutor</span
+                  >
+                  <span
+                    class="font-sans font-bold text-xs sm:text-sm text-white uppercase"
+                    >Arthur Moura</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Coluna Visual Cinematográfica (Ferramenta Profissional & Trabalho Automotivo) -->
+            <div class="lg:col-span-5 reveal-up">
+              <div
+                class="relative bg-dark-800 border border-gold-500/30 p-3 rounded-[2px] gold-glow"
+              >
+                <!-- Cantos Decorativos Dourados -->
+                <div
+                  class="absolute -top-1.5 -left-1.5 w-4 h-4 border-t-2 border-l-2 border-gold-500"
+                ></div>
+                <div
+                  class="absolute -bottom-1.5 -right-1.5 w-4 h-4 border-b-2 border-r-2 border-gold-500"
+                ></div>
+
+                <div
+                  class="relative aspect-[4/5] bg-dark-900 overflow-hidden rounded-[1px]"
+                >
+                  <!-- Imagem Real Configurável via ACADEMY_CONFIG.assets.heroTool -->
+                  <img
+                    :src="assets.heroTool"
+                    alt="Ferramenta profissional de martelinho de ouro e iluminação técnica sobre lataria automotiva na Moura Academy"
+                    class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                    onerror="
+                      this.style.display = 'none';
+                      this.nextElementSibling.style.display = 'flex';
+                    "
+                  />
+
+                  <!-- Composição Visual Técnica Fallback (Iluminação Dourada + Haste de Precisão) -->
+                  <div
+                    class="hidden absolute inset-0 flex-col justify-between p-7 bg-gradient-to-br from-dark-800 via-dark-900 to-black"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="text-[10px] font-sans font-bold tracking-[0.25em] text-gold-500 uppercase"
+                        >MOURA ACADEMY // TO</span
+                      >
+                      <span
+                        class="px-2.5 py-1 border border-gold-500/40 text-[10px] font-sans uppercase tracking-widest text-gold-100"
+                        >Precisão</span
+                      >
+                    </div>
+
+                    <!-- Ilustração Técnica Minimalista de Luminária de Reflexão e Haste -->
+                    <div
+                      class="my-auto flex flex-col items-center text-center py-6"
+                    >
+                      <svg
+                        class="w-40 h-40 text-gold-500/85 mb-5"
+                        viewBox="0 0 160 160"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <rect
+                          x="20"
+                          y="24"
+                          width="120"
+                          height="36"
+                          rx="2"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                        />
+                        <line
+                          x1="32"
+                          y1="36"
+                          x2="128"
+                          y2="36"
+                          stroke="#FCF6BE"
+                          stroke-width="2"
+                        />
+                        <line
+                          x1="32"
+                          y1="48"
+                          x2="128"
+                          y2="48"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-dasharray="4 3"
+                        />
+                        <path
+                          d="M25 118C55 96 105 96 135 118"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M52 138L84 94L92 84"
+                          stroke="#FCF6BE"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                        />
+                        <circle cx="92" cy="84" r="4" fill="#D4AF37" />
+                      </svg>
+                      <p
+                        class="font-serif text-sm tracking-[0.2em] text-gold-100 uppercase"
+                      >
+                        Arte &amp; Precisão Técnica
+                      </p>
+                      <p class="text-xs text-gray-400 mt-2 max-w-xs">
+                        Formação prática com ferramentas profissionais e leitura
+                        de iluminação em oficina.
+                      </p>
+                    </div>
+
+                    <div
+                      class="border-t border-gold-500/20 pt-4 flex items-center justify-between text-[11px] text-gray-400"
+                    >
+                      <span>Do zero à prática</span>
+                      <span class="text-gold-500 font-semibold"
+                        >Araguaína – TO</span
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Legenda Editorial Sobreposta -->
+                  <div
+                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-dark-900 via-dark-900/85 to-transparent p-6"
+                  >
+                    <p
+                      class="font-sans text-[10px] font-bold tracking-[0.22em] text-gold-500 uppercase mb-1"
+                    >
+                      ENSINO PRESENCIAL &amp; PRÁTICO
+                    </p>
+                    <p class="font-sans font-bold text-sm text-white">
+                      Ferramentas profissionais e acompanhamento direto durante
+                      toda a imersão.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+             SEÇÃO 02 — SOBRE A ACADEMY (ALTERNÂNCIA PONTUAL OFF-WHITE)
+        ====================================================================== -->
+      <section
+        id="academia"
+        class="py-20 lg:py-28 bg-offwhite text-dark-900 border-y border-gold-500/30"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <!-- Coluna Título e Identificação -->
+            <div class="lg:col-span-5 reveal-up">
+              <div class="flex items-center gap-3 mb-4">
+                <span
+                  class="font-serif font-bold text-sm text-gold-600 tracking-[0.2em]"
+                  >02</span
+                >
+                <span class="h-[1px] w-10 bg-gold-600"></span>
+                <span
+                  class="font-sans font-bold text-xs uppercase tracking-[0.22em] text-gold-700"
+                  >Sobre a Academy</span
+                >
+              </div>
+              <h2
+                class="font-sans font-black text-2xl sm:text-4xl uppercase tracking-tight leading-[1.15] text-dark-900 mb-6"
+              >
+                UMA NOVA PROFISSÃO PODE COMEÇAR COM UMA OPORTUNIDADE.
+              </h2>
+              <div class="w-16 h-1 bg-gold-500"></div>
+            </div>
+
+            <!-- Coluna Narrativa Institucional -->
+            <div
+              class="lg:col-span-7 reveal-up space-y-5 text-dark-700 text-base sm:text-lg leading-relaxed"
+            >
+              <p>
+                A
+                <strong class="text-dark-900 font-bold">Moura Academy</strong>
+                nasceu da vivência real de bancada e oficina no trabalho diário
+                com martelinho de ouro. Idealizada por
+                <strong class="text-dark-900 font-semibold">Nathaly</strong> e
+                conduzida em sala e oficina por
+                <strong class="text-dark-900 font-semibold">Arthur Moura</strong
+                >, a academia foi estruturada para transformar experiência
+                prática acumulada ao longo de aproximadamente cinco anos em um
+                método de ensino claro, próximo e acessível.
+              </p>
+              <p>
+                Nosso propósito é abrir as portas dessa profissão para pessoas
+                que desejam ingressar no mercado automotivo com seriedade —
+                <strong class="text-dark-900 font-semibold"
+                  >inclusive para quem nunca teve qualquer contato técnico com
+                  automóveis</strong
+                >.
+              </p>
+              <p>
+                Em vez de uma abordagem distante ou puramente teórica, a Moura
+                Academy oferece um ambiente presencial acolhedor em Araguaína
+                (TO), onde cada etapa da técnica é explicada com calma,
+                paciência e prática supervisionada.
+              </p>
+
+              <!-- Pilares Institucionais -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
+                <div
+                  class="bg-white border border-dark-900/10 p-5 rounded-[2px] shadow-sm"
+                >
+                  <span
+                    class="block font-sans text-[11px] font-bold uppercase tracking-[0.18em] text-gold-700 mb-1"
+                    >Idealização</span
+                  >
+                  <p class="font-sans font-bold text-sm text-dark-900">
+                    Criada por Nathaly com foco em ensino estruturado
+                  </p>
+                </div>
+                <div
+                  class="bg-white border border-dark-900/10 p-5 rounded-[2px] shadow-sm"
+                >
+                  <span
+                    class="block font-sans text-[11px] font-bold uppercase tracking-[0.18em] text-gold-700 mb-1"
+                    >Condução Técnica</span
+                  >
+                  <p class="font-sans font-bold text-sm text-dark-900">
+                    Ministrada presencialmente por Arthur Moura
+                  </p>
+                </div>
+                <div
+                  class="bg-white border border-dark-900/10 p-5 rounded-[2px] shadow-sm"
+                >
+                  <span
+                    class="block font-sans text-[11px] font-bold uppercase tracking-[0.18em] text-gold-700 mb-1"
+                    >Acessibilidade</span
+                  >
+                  <p class="font-sans font-bold text-sm text-dark-900">
+                    Preparada para quem começa do absoluto zero
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+             SEÇÃO 03 — CONHEÇA O PROFESSOR
+        ====================================================================== -->
+      <section
+        id="professor"
+        class="py-20 lg:py-28 bg-dark-900 relative overflow-hidden"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Cabeçalho da Seção -->
+          <div class="max-w-3xl mb-14 reveal-up">
+            <div class="flex items-center gap-3 mb-4">
+              <span
+                class="font-serif font-bold text-sm text-gold-500 tracking-[0.2em]"
+                >03</span
+              >
+              <span class="h-[1px] w-10 bg-gold-500"></span>
+              <span
+                class="font-sans font-bold text-xs uppercase tracking-[0.22em] text-gold-500"
+                >Conheça o Professor</span
+              >
+            </div>
+            <h2
+              class="font-sans font-black text-2xl sm:text-4xl lg:text-[2.6rem] uppercase tracking-tight leading-[1.12] text-white"
+            >
+              QUEM JÁ COMEÇOU DO ZERO, SABE COMO ENSINAR.
+            </h2>
+          </div>
+
+          <!-- Composição Editorial: Fotografia Real + Trajetória -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Fotografia Editorial de Arthur Moura -->
+            <div class="lg:col-span-5 reveal-up">
+              <div
+                class="relative bg-dark-800 border border-gold-500/25 p-3 rounded-[2px]"
+              >
+                <div
+                  class="relative aspect-[4/5] bg-dark-900 overflow-hidden rounded-[1px]"
+                >
+                  <img
+                    :src="assets.instructorPhoto"
+                    alt="Professor Arthur Moura trabalhando e ensinando técnicas de martelinho de ouro"
+                    class="w-full h-full object-cover object-center"
+                    loading="lazy"
+                    onerror="
+                      this.style.display = 'none';
+                      this.nextElementSibling.style.display = 'flex';
+                    "
+                  />
+
+                  <!-- Fallback Editorial Caso a Imagem Ainda Não Tenha Sido Inserida -->
+                  <div
+                    class="hidden absolute inset-0 flex-col justify-between p-8 bg-gradient-to-b from-dark-800 to-dark-900 border border-gold-500/15"
+                  >
+                    <span
+                      class="text-[10px] font-sans font-bold tracking-[0.24em] text-gold-500 uppercase"
+                      >INSTRUTOR &amp; ESPECIALISTA</span
+                    >
+                    <div class="my-auto text-center">
+                      <div
+                        class="w-20 h-20 mx-auto mb-4 border border-gold-500/50 rounded-[2px] flex items-center justify-center bg-dark-900"
+                      >
+                        <span class="font-serif text-3xl text-gold-500"
+                          >AM</span
+                        >
+                      </div>
+                      <p
+                        class="font-sans font-extrabold text-lg uppercase tracking-wider text-white"
+                      >
+                        Arthur Moura
+                      </p>
+                      <p class="text-xs text-gray-400 mt-1">
+                        Espaço reservado para fotografia real do professor em
+                        atividade
+                      </p>
+                    </div>
+                    <div class="border-t border-gold-500/20 pt-4 text-center">
+                      <span
+                        class="font-serif text-xs tracking-[0.2em] text-gold-100 uppercase"
+                        >5 Anos de Experiência</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card Flutuante de Credencial -->
+                <div
+                  class="mt-3 bg-dark-900 border border-gold-500/20 px-5 py-4 flex items-center justify-between"
+                >
+                  <div>
+                    <p
+                      class="font-sans font-extrabold text-sm uppercase tracking-wider text-white"
+                    >
+                      Arthur Moura
+                    </p>
+                    <p class="text-xs text-gray-400">
+                      Instrutor — Moura Academy
+                    </p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-gold-500/10 border border-gold-500/40 text-gold-500 font-sans font-bold text-[11px] uppercase tracking-wider"
+                  >
+                    Especialista em Acabamento
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Narrativa de Trajetória -->
+            <div class="lg:col-span-7 reveal-up">
+              <blockquote
+                class="border-l-2 border-gold-500 pl-5 sm:pl-6 py-1 mb-8"
+              >
+                <p
+                  class="font-serif text-lg sm:text-2xl text-gold-100 leading-snug"
+                >
+                  “EU TAMBÉM COMECEI SEM SABER NADA. HOJE, ENSINO O CAMINHO QUE
+                  CONSTRUÍ.”
+                </p>
+              </blockquote>
+
+              <div
+                class="space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed mb-8"
+              >
+                <p>
+                  A história de
+                  <strong class="text-white">Arthur Moura</strong> no martelinho
+                  de ouro não começou dentro de uma oficina, mas a partir da
+                  decisão de aprender uma nova profissão do zero — sem qualquer
+                  conhecimento prévio sobre automóveis.
+                </p>
+                <p>
+                  Após concluir uma formação inicial de duas semanas em Goiânia,
+                  Arthur escolheu o caminho da prática real: trabalhou
+                  gratuitamente durante alguns meses para ganhar segurança,
+                  leitura de chapa e domínio das ferramentas. De volta a
+                  Araguaína, dedicou aproximadamente dois meses treinando
+                  exaustivamente em peças soltas antes de atender os primeiros
+                  veículos.
+                </p>
+                <p>
+                  Os primeiros serviços foram realizados com valores iniciais
+                  reduzidos — em torno de R$ 80 — com um único foco: aperfeiçoar
+                  cada detalhe técnico e conquistar reconhecimento pela
+                  qualidade da entrega. Cerca de um ano após seu retorno a
+                  Araguaína, a
+                  <strong class="text-white">Moura Martelinho</strong> começou a
+                  se consolidar como referência na cidade.
+                </p>
+                <p>
+                  Hoje, com
+                  <strong class="text-white"
+                    >cinco anos de experiência na área</strong
+                  >
+                  e especializações voltadas ao acabamento fino, Arthur tem como
+                  marca registrada o detalhismo e a precisão — e transforma essa
+                  vivência em uma didática clara para quem está dando os
+                  primeiros passos.
+                </p>
+              </div>
+
+              <!-- Marcos da Trajetória -->
+              <div
+                class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-gold-500/20"
+              >
+                <div
+                  class="bg-dark-800 border border-gold-500/15 p-4 rounded-[2px]"
+                >
+                  <span
+                    class="font-serif text-gold-500 text-xs tracking-widest uppercase block mb-1"
+                    >Início do Zero</span
+                  >
+                  <p class="text-xs text-gray-300 leading-relaxed">
+                    Formação em Goiânia, meses de prática voluntária e treino
+                    diário em peças soltas.
+                  </p>
+                </div>
+                <div
+                  class="bg-dark-800 border border-gold-500/15 p-4 rounded-[2px]"
+                >
+                  <span
+                    class="font-serif text-gold-500 text-xs tracking-widest uppercase block mb-1"
+                    >Consolidação</span
+                  >
+                  <p class="text-xs text-gray-300 leading-relaxed">
+                    Construção gradual de reputação em Araguaína com foco
+                    absoluto na qualidade.
+                  </p>
+                </div>
+                <div
+                  class="bg-dark-800 border border-gold-500/15 p-4 rounded-[2px]"
+                >
+                  <span
+                    class="font-serif text-gold-500 text-xs tracking-widest uppercase block mb-1"
+                    >Diferencial Técnico</span
+                  >
+                  <p class="text-xs text-gray-300 leading-relaxed">
+                    5 anos de experiência e especializações em acabamento de
+                    alto nível.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+             SEÇÃO 04 — APRESENTAÇÃO DO CURSO
+        ====================================================================== -->
+      <section
+        id="formacao"
+        class="py-20 lg:py-28 bg-dark-800 border-t border-gold-500/15"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-14"
+          >
+            <div class="lg:col-span-7 reveal-up">
+              <div class="flex items-center gap-3 mb-4">
+                <span
+                  class="font-serif font-bold text-sm text-gold-500 tracking-[0.2em]"
+                  >04</span
+                >
+                <span class="h-[1px] w-10 bg-gold-500"></span>
+                <span
+                  class="font-sans font-bold text-xs uppercase tracking-[0.22em] text-gold-500"
+                  >Apresentação do Curso</span
+                >
+              </div>
+              <h2
+                class="font-sans font-black text-2xl sm:text-4xl uppercase tracking-tight leading-[1.15] text-white mb-6"
+              >
+                DOMINE UMA TÉCNICA VALORIZADA NO MERCADO AUTOMOTIVO.
+              </h2>
+              <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
+                Uma formação desenvolvida para ensinar, na prática, os
+                fundamentos e as técnicas do martelinho de ouro, desde a
+                compreensão dos danos até os procedimentos de reparação.
+              </p>
+            </div>
+
+            <!-- Bloco Visual de Destaque -->
+            <div class="lg:col-span-5 reveal-up">
+              <div
+                class="bg-dark-900 border border-gold-500/45 p-7 sm:p-8 rounded-[2px] gold-glow relative"
+              >
+                <span
+                  class="inline-block text-[10px] font-sans font-bold uppercase tracking-[0.24em] text-gold-500 mb-3"
+                >
+                  IMERSÃO PRESENCIAL
+                </span>
+                <p
+                  class="font-sans font-black text-xl sm:text-2xl uppercase tracking-tight text-white leading-snug mb-3"
+                >
+                  “7 DIAS DE IMERSÃO. UMA NOVA POSSIBILIDADE PROFISSIONAL.”
+                </p>
+                <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                  Não é necessário possuir experiência anterior com automóveis.
+                  Você aprende passo a passo, desde o primeiro contato com as
+                  ferramentas até a execução em veículos reais.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid dos 6 Pilares da Formação -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal-up"
+          >
+            <div class="card-luxury flex items-start gap-4">
+              <div
+                class="w-10 h-10 shrink-0 border border-gold-500/40 bg-dark-900 flex items-center justify-center text-gold-500 font-serif font-bold text-sm"
+              >
+                01
+              </div>
+              <div>
+                <h3
+                  class="font-sans font-bold text-sm uppercase tracking-wider text-white mb-1.5"
+                >
+                  Curso presencial
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Ensino direto em ambiente de oficina preparado para o
+                  aprendizado técnico em Araguaína – TO.
+                </p>
+              </div>
+            </div>
+
+            <div class="card-luxury flex items-start gap-4">
+              <div
+                class="w-10 h-10 shrink-0 border border-gold-500/40 bg-dark-900 flex items-center justify-center text-gold-500 font-serif font-bold text-sm"
+              >
+                02
+              </div>
+              <div>
+                <h3
+                  class="font-sans font-bold text-sm uppercase tracking-wider text-white mb-1.5"
+                >
+                  Sete dias intensivos
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Carga horária dedicada para assimilar movimentos, postura,
+                  leitura de luz e controle de pressão.
+                </p>
+              </div>
+            </div>
+
+            <div class="card-luxury flex items-start gap-4">
+              <div
+                class="w-10 h-10 shrink-0 border border-gold-500/40 bg-dark-900 flex items-center justify-center text-gold-500 font-serif font-bold text-sm"
+              >
+                03
+              </div>
+              <div>
+                <h3
+                  class="font-sans font-bold text-sm uppercase tracking-wider text-white mb-1.5"
+                >
+                  Conteúdo teórico e prático
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Base conceitual clara unida à prática constante para
+                  consolidar cada etapa do procedimento.
+                </p>
+              </div>
+            </div>
+
+            <div class="card-luxury flex items-start gap-4">
+              <div
+                class="w-10 h-10 shrink-0 border border-gold-500/40 bg-dark-900 flex items-center justify-center text-gold-500 font-serif font-bold text-sm"
+              >
+                04
+              </div>
+              <div>
+                <h3
+                  class="font-sans font-bold text-sm uppercase tracking-wider text-white mb-1.5"
+                >
+                  Acompanhamento de Arthur Moura
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Correção individual de postura, empunhadura e técnica durante
+                  toda a jornada de formação.
+                </p>
+              </div>
+            </div>
+
+            <div class="card-luxury flex items-start gap-4">
+              <div
+                class="w-10 h-10 shrink-0 border border-gold-500/40 bg-dark-900 flex items-center justify-center text-gold-500 font-serif font-bold text-sm"
+              >
+                05
+              </div>
+              <div>
+                <h3
+                  class="font-sans font-bold text-sm uppercase tracking-wider text-white mb-1.5"
+                >
+                  Atividades em veículos reais
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Treinamento progressivo que evolui para aplicações práticas em
+                  painéis e veículos reais.
+                </p>
+              </div>
+            </div>
+
+            <div class="card-luxury flex items-start gap-4">
+              <div
+                class="w-10 h-10 shrink-0 border border-gold-500/40 bg-dark-900 flex items-center justify-center text-gold-500 font-serif font-bold text-sm"
+              >
+                06
+              </div>
+              <div>
+                <h3
+                  class="font-sans font-bold text-sm uppercase tracking-wider text-white mb-1.5"
+                >
+                  Ferramentas disponibilizadas
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Todo o ferramental e equipamentos profissionais necessários
+                  são disponibilizados durante a formação.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+             SEÇÃO 05 — GRADE CURRICULAR
+        ====================================================================== -->
+      <section
+        id="grade"
+        class="py-20 lg:py-28 bg-dark-900 border-t border-gold-500/15"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 reveal-up"
+          >
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <span
+                  class="font-serif font-bold text-sm text-gold-500 tracking-[0.2em]"
+                  >05</span
+                >
+                <span class="h-[1px] w-10 bg-gold-500"></span>
+                <span
+                  class="font-sans font-bold text-xs uppercase tracking-[0.22em] text-gold-500"
+                  >Grade Curricular</span
+                >
+              </div>
+              <h2
+                class="font-sans font-black text-2xl sm:text-4xl uppercase tracking-tight text-white"
+              >
+                O QUE VOCÊ VAI APRENDER.
+              </h2>
+            </div>
+            <p class="text-gray-400 text-sm max-w-md">
+              Sete módulos estruturados em sequência lógica para construir
+              segurança técnica do início ao acabamento.
+            </p>
+          </div>
+
+          <!-- 7 Módulos Numerados (Sem invenção de módulos extras) -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 reveal-up"
+          >
+            <article class="card-luxury flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <span class="font-serif font-bold text-2xl text-gold-500"
+                    >01</span
+                  >
+                  <span class="h-[1px] flex-1 bg-gold-500/20 ml-4"></span>
+                </div>
+                <h3
+                  class="font-sans font-bold text-base uppercase tracking-wide text-white mb-2.5"
+                >
+                  Fundamentos do martelinho de ouro
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Compreensão dos princípios da reparação artesanal sem pintura,
+                  comportamento da chapa metálica e postura profissional.
+                </p>
+              </div>
+            </article>
+
+            <article class="card-luxury flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <span class="font-serif font-bold text-2xl text-gold-500"
+                    >02</span
+                  >
+                  <span class="h-[1px] flex-1 bg-gold-500/20 ml-4"></span>
+                </div>
+                <h3
+                  class="font-sans font-bold text-base uppercase tracking-wide text-white mb-2.5"
+                >
+                  Identificação e avaliação de danos
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Análise técnica de amassados, pontos de tensão, profundidade e
+                  definição da estratégia adequada para cada reparo.
+                </p>
+              </div>
+            </article>
+
+            <article class="card-luxury flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <span class="font-serif font-bold text-2xl text-gold-500"
+                    >03</span
+                  >
+                  <span class="h-[1px] flex-1 bg-gold-500/20 ml-4"></span>
+                </div>
+                <h3
+                  class="font-sans font-bold text-base uppercase tracking-wide text-white mb-2.5"
+                >
+                  Conhecimento de ferramentas e equipamentos
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Apresentação detalhada de hastes, pontas, martelos, pinos e
+                  acessórios, entendendo a função e o controle de cada
+                  instrumento.
+                </p>
+              </div>
+            </article>
+
+            <article class="card-luxury flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <span class="font-serif font-bold text-2xl text-gold-500"
+                    >04</span
+                  >
+                  <span class="h-[1px] flex-1 bg-gold-500/20 ml-4"></span>
+                </div>
+                <h3
+                  class="font-sans font-bold text-base uppercase tracking-wide text-white mb-2.5"
+                >
+                  Utilização da iluminação profissional
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Posicionamento e leitura das linhas de reflexão da luminária
+                  técnica para enxergar microdeformações e guiar cada movimento.
+                </p>
+              </div>
+            </article>
+
+            <article class="card-luxury flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <span class="font-serif font-bold text-2xl text-gold-500"
+                    >05</span
+                  >
+                  <span class="h-[1px] flex-1 bg-gold-500/20 ml-4"></span>
+                </div>
+                <h3
+                  class="font-sans font-bold text-base uppercase tracking-wide text-white mb-2.5"
+                >
+                  Técnicas de acesso e reparação
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Formas seguras de acessar a parte interna das peças
+                  automotivas e executar o nivelamento gradual da lataria com
+                  precisão.
+                </p>
+              </div>
+            </article>
+
+            <article class="card-luxury flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <span class="font-serif font-bold text-2xl text-gold-500"
+                    >06</span
+                  >
+                  <span class="h-[1px] flex-1 bg-gold-500/20 ml-4"></span>
+                </div>
+                <h3
+                  class="font-sans font-bold text-base uppercase tracking-wide text-white mb-2.5"
+                >
+                  Preservação da pintura original
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Procedimentos essenciais para atuar sobre o metal sem
+                  comprometer o verniz ou a pintura de fábrica do veículo.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="card-luxury md:col-span-2 lg:col-span-3 border-gold-500/30 bg-gradient-to-r from-dark-800 via-dark-800 to-dark-900"
+            >
+              <div class="flex flex-col sm:flex-row sm:items-center gap-5">
+                <div class="flex items-center gap-4">
+                  <span class="font-serif font-bold text-3xl text-gold-500"
+                    >07</span
+                  >
+                  <span
+                    class="h-8 w-[1px] bg-gold-500/30 hidden sm:block"
+                  ></span>
+                </div>
+                <div>
+                  <h3
+                    class="font-sans font-bold text-base sm:text-lg uppercase tracking-wide text-white mb-1"
+                  >
+                    Prática em veículos reais
+                  </h3>
+                  <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                    Aplicação supervisionada de todo o conteúdo aprendido
+                    diretamente em painéis e veículos reais, preparando o aluno
+                    para os desafios reais da profissão.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+             SEÇÃO 06 — APRENDIZADO NA PRÁTICA
+        ====================================================================== -->
+      <section
+        id="pratica"
+        class="py-20 lg:py-28 bg-dark-800 border-t border-gold-500/15"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl mb-14 reveal-up">
+            <div class="flex items-center gap-3 mb-4">
+              <span
+                class="font-serif font-bold text-sm text-gold-500 tracking-[0.2em]"
+                >06</span
+              >
+              <span class="h-[1px] w-10 bg-gold-500"></span>
+              <span
+                class="font-sans font-bold text-xs uppercase tracking-[0.22em] text-gold-500"
+                >Aprendizado na Prática</span
+              >
+            </div>
+            <h2
+              class="font-sans font-black text-2xl sm:text-4xl uppercase tracking-tight leading-[1.15] text-white"
+            >
+              CONHECIMENTO TÉCNICO QUE SE DESENVOLVE COM PRÁTICA.
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 reveal-up">
+            <!-- Pilar 01 -->
+            <div
+              class="bg-dark-900 border border-gold-500/20 rounded-[2px] overflow-hidden flex flex-col"
+            >
+              <div
+                class="relative aspect-[16/10] bg-dark-800 overflow-hidden border-b border-gold-500/15"
+              >
+                <img
+                  :src="assets.practiceTheory"
+                  alt="Combinação entre fundamentação teórica e execução prática em oficina na Moura Academy"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div
+                  class="hidden absolute inset-0 flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-dark-800 to-dark-900"
+                >
+                  <span class="font-serif text-3xl text-gold-500/80 mb-2"
+                    >01</span
+                  >
+                  <span
+                    class="text-[11px] font-sans uppercase tracking-[0.2em] text-gray-400"
+                    >Estrutura da Academia</span
+                  >
+                </div>
+              </div>
+              <div class="p-7 flex-1">
+                <span
+                  class="font-serif font-bold text-xs tracking-[0.22em] text-gold-500 block mb-2"
+                  >01. TEORIA E EXECUÇÃO</span
+                >
+                <h3
+                  class="font-sans font-extrabold text-lg uppercase text-white mb-3"
+                >
+                  Teoria e Execução
+                </h3>
+                <p class="text-sm text-gray-300 leading-relaxed">
+                  Combinação entre fundamentação teórica e execução prática em
+                  oficina, garantindo que você entenda o porquê de cada
+                  movimento antes e durante a execução.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pilar 02 -->
+            <div
+              class="bg-dark-900 border border-gold-500/20 rounded-[2px] overflow-hidden flex flex-col"
+            >
+              <div
+                class="relative aspect-[16/10] bg-dark-800 overflow-hidden border-b border-gold-500/15"
+              >
+                <img
+                  :src="assets.practiceTools"
+                  alt="Ferramentas profissionais de martelinho de ouro e luminária técnica"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div
+                  class="hidden absolute inset-0 flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-dark-800 to-dark-900"
+                >
+                  <span class="font-serif text-3xl text-gold-500/80 mb-2"
+                    >02</span
+                  >
+                  <span
+                    class="text-[11px] font-sans uppercase tracking-[0.2em] text-gray-400"
+                    >Ferramentas &amp; Iluminação</span
+                  >
+                </div>
+              </div>
+              <div class="p-7 flex-1">
+                <span
+                  class="font-serif font-bold text-xs tracking-[0.22em] text-gold-500 block mb-2"
+                  >02. FERRAMENTAS PROFISSIONAIS</span
+                >
+                <h3
+                  class="font-sans font-extrabold text-lg uppercase text-white mb-3"
+                >
+                  Ferramentas Profissionais
+                </h3>
+                <p class="text-sm text-gray-300 leading-relaxed">
+                  Contato direto e aprendizado com ferramentas profissionais de
+                  alta precisão e iluminação técnica utilizada no dia a dia do
+                  mercado.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pilar 03 -->
+            <div
+              class="bg-dark-900 border border-gold-500/20 rounded-[2px] overflow-hidden flex flex-col"
+            >
+              <div
+                class="relative aspect-[16/10] bg-dark-800 overflow-hidden border-b border-gold-500/15"
+              >
+                <img
+                  :src="assets.practiceVehicles"
+                  alt="Alunos aplicando técnicas de martelinho de ouro em veículos reais"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div
+                  class="hidden absolute inset-0 flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-dark-800 to-dark-900"
+                >
+                  <span class="font-serif text-3xl text-gold-500/80 mb-2"
+                    >03</span
+                  >
+                  <span
+                    class="text-[11px] font-sans uppercase tracking-[0.2em] text-gray-400"
+                    >Prática em Veículos Reais</span
+                  >
+                </div>
+              </div>
+              <div class="p-7 flex-1">
+                <span
+                  class="font-serif font-bold text-xs tracking-[0.22em] text-gold-500 block mb-2"
+                  >03. APLICAÇÃO EM VEÍCULOS REAIS</span
+                >
+                <h3
+                  class="font-sans font-extrabold text-lg uppercase text-white mb-3"
+                >
+                  Aplicação em Veículos Reais
+                </h3>
+                <p class="text-sm text-gray-300 leading-relaxed">
+                  Aplicação das técnicas em painéis e veículos reais, com
+                  diferentes níveis de complexidade, sob supervisão constante do
+                  instrutor.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+             SEÇÃO 07 — GALERIA DE TRABALHOS / CARROSSEL 3D COVERFLOW
+        ====================================================================== -->
+      <section
+        id="trabalhos"
+        class="py-20 lg:py-28 bg-dark-900 border-t border-gold-500/15 overflow-hidden"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto mb-12 reveal-up">
+            <div class="inline-flex items-center gap-3 mb-4">
+              <span
+                class="font-serif font-bold text-sm text-gold-500 tracking-[0.2em]"
+                >07</span
+              >
+              <span class="h-[1px] w-10 bg-gold-500"></span>
+              <span
+                class="font-sans font-bold text-xs uppercase tracking-[0.22em] text-gold-500"
+                >Portfólio Técnico</span
+              >
+            </div>
+            <h2
+              class="font-sans font-black text-2xl sm:text-4xl uppercase tracking-tight text-white mb-4"
+            >
+              RESULTADOS QUE DEMONSTRAM A TÉCNICA.
+            </h2>
+            <p class="text-gray-400 text-sm sm:text-base">
+              Trabalhos reais realizados pela Moura Martelinho que refletem o
+              padrão de detalhismo e acabamento ensinado na formação.
+            </p>
+          </div>
+
+          <!-- Carrossel 3D Coverflow Interativo -->
+          <div
+            class="relative reveal-up"
+            @mouseenter="pauseAutoplay()"
+            @mouseleave="resumeAutoplay()"
+            @touchstart.passive="handleCarouselTouchStart($event)"
+            @touchend="handleCarouselTouchEnd($event)"
+          >
+            <div
+              class="carousel-container"
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Galeria de trabalhos realizados pela Moura Martelinho"
+            >
+              <template x-for="(item, index) in galleryItems" :key="index">
+                <div
+                  :class="getCarouselCardClass(index)"
+                  @click="goToSlide(index)"
+                  class="carousel-card cursor-pointer select-none"
+                >
+                  <!-- Imagem Real do Trabalho -->
+                  <img
+                    :src="item.image"
+                    :alt="item.alt"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    onerror="
+                      this.style.display = 'none';
+                      this.nextElementSibling.style.display = 'flex';
+                    "
+                  />
+
+                  <!-- Placeholder Técnico Estruturado Caso a Foto Ainda Não Esteja no Diretório -->
+                  <div
+                    class="hidden absolute inset-0 flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-dark-800 via-dark-900 to-black"
+                  >
+                    <span
+                      class="font-serif text-xs tracking-[0.25em] text-gold-500 uppercase mb-3"
+                      >MOURA MARTELINHO</span
+                    >
+                    <div
+                      class="w-14 h-14 border border-gold-500/40 flex items-center justify-center mb-4"
+                    >
+                      <span
+                        class="font-serif text-lg text-gold-500"
+                        x-text="'0' + (index + 1)"
+                      ></span>
+                    </div>
+                    <p
+                      class="font-sans font-bold text-sm uppercase tracking-wider text-white mb-1"
+                      x-text="item.title"
+                    ></p>
+                    <p
+                      class="text-xs text-gray-400 max-w-xs"
+                      x-text="item.caption"
+                    ></p>
+                  </div>
+
+                  <!-- Legenda Inferior -->
+                  <div
+                    class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-dark-900 via-dark-900/85 to-transparent p-5 sm:p-7"
+                  >
+                    <span
+                      class="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-gold-500 block mb-1"
+                      x-text="'TRABALHO 0' + (index + 1)"
+                    ></span>
+                    <h3
+                      class="font-sans font-bold text-base sm:text-lg text-white"
+                      x-text="item.title"
+                    ></h3>
+                    <p
+                      class="text-xs sm:text-sm text-gray-300 mt-1"
+                      x-text="item.caption"
+                    ></p>
+                  </div>
+                </div>
+              </template>
+            </div>
+
+            <!-- Controles de Navegação (Setas + Indicadores) -->
+            <div class="flex items-center justify-center gap-6 mt-8">
+              <button
+                type="button"
+                @click="prevSlide()"
+                aria-label="Trabalho anterior"
+                class="w-11 h-11 border border-gold-500/40 bg-dark-800 text-gold-500 hover:bg-gold-500 hover:text-dark-900 transition-colors flex items-center justify-center rounded-[2px] cursor-pointer"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+
+              <div
+                class="flex items-center gap-2.5"
+                role="tablist"
+                aria-label="Selecionar trabalho"
+              >
+                <template
+                  x-for="(item, index) in galleryItems"
+                  :key="'dot-' + index"
+                >
+                  <button
+                    type="button"
+                    @click="goToSlide(index)"
+                    :aria-label="'Ir para trabalho ' + (index + 1)"
+                    :aria-selected="(galleryIndex === index).toString()"
+                    :class="galleryIndex === index ? 'w-8 bg-gold-500' : 'w-2.5 bg-gray-600 hover:bg-gold-500/60'"
+                    class="h-2 rounded-[1px] transition-all duration-300 cursor-pointer"
+                  ></button>
+                </template>
+              </div>
+
+              <button
+                type="button"
+                @click="nextSlide()"
+                aria-label="Próximo trabalho"
+                class="w-11 h-11 border border-gold-500/40 bg-dark-800 text-gold-500 hover:bg-gold-500 hover:text-dark-900 transition-colors flex items-center justify-center rounded-[2px] cursor-pointer"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+             SEÇÃO 08 — ANTES E DEPOIS (COMPARADOR INTERATIVO)
+        ====================================================================== -->
+      <section
+        id="antes-depois"
+        class="py-20 lg:py-28 bg-dark-800 border-t border-gold-500/15"
+      >
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto mb-10 reveal-up">
+            <div class="inline-flex items-center gap-3 mb-4">
+              <span
+                class="font-serif font-bold text-sm text-gold-500 tracking-[0.2em]"
+                >08</span
+              >
+              <span class="h-[1px] w-10 bg-gold-500"></span>
+              <span
+                class="font-sans font-bold text-xs uppercase tracking-[0.22em] text-gold-500"
+                >Comparativo Real</span
+              >
+            </div>
+            <h2
+              class="font-sans font-black text-2xl sm:text-4xl uppercase tracking-tight text-white mb-4"
+            >
+              A PRECISÃO ESTÁ NOS DETALHES.
+            </h2>
+            <p class="text-gray-400 text-sm sm:text-base">
+              Arraste o controle central para comparar o mesmo painel antes e
+              depois da reparação artesanal sem pintura.
+            </p>
+          </div>
+
+          <!-- Navegação entre Múltiplos Exemplos -->
+          <div
+            class="flex flex-wrap items-center justify-center gap-3 mb-8 reveal-up"
+          >
+            <template
+              x-for="(comp, idx) in comparisons"
+              :key="'comp-tab-' + idx"
+            >
+              <button
+                type="button"
+                @click="selectComparison(idx)"
+                :class="activeComparison === idx ? 'btn-premium' : 'btn-secondary'"
+                class="px-5 py-2.5 text-xs cursor-pointer"
+                x-text="comp.label"
+              ></button>
+            </template>
+          </div>
+
+          <!-- Container do Comparador Interativo -->
+          <div class="reveal-up">
+            <div
+              id="before-after-container"
+              @mousedown="startSliding($event)"
+              @touchstart.passive="startSliding($event)"
+              class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-dark-900 border border-gold-500/35 rounded-[2px] overflow-hidden select-none cursor-ew-resize gold-glow comparison-stage"
+            >
+              <!-- Camada Base: DEPOIS (100% visível à direita da linha) -->
+              <div class="absolute inset-0">
+                <img
+                  :src="comparisons[activeComparison].afterImage"
+                  :alt="'Depois do reparo: ' + comparisons[activeComparison].title"
+                  class="w-full h-full object-cover pointer-events-none"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div
+                  class="hidden absolute inset-0 flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-dark-900 via-dark-800 to-black"
+                >
+                  <span
+                    class="font-serif text-xs tracking-[0.25em] text-gold-500 uppercase mb-2"
+                    >DEPOIS DO REPARO</span
+                  >
+                  <p
+                    class="font-sans font-bold text-base text-white"
+                    x-text="comparisons[activeComparison].title"
+                  ></p>
+                  <p class="text-xs text-gray-400 mt-1">
+                    Superfície nivelada com preservação da pintura original
+                  </p>
+                </div>
+              </div>
+
+              <!-- Camada Sobreposta Recortada: ANTES (visível à esquerda da linha) -->
+              <div
+                :style="'clip-path: inset(0 ' + (100 - sliderPos) + '% 0 0);'"
+                class="absolute inset-0"
+              >
+                <img
+                  :src="comparisons[activeComparison].beforeImage"
+                  :alt="'Antes do reparo: ' + comparisons[activeComparison].title"
+                  class="w-full h-full object-cover pointer-events-none"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div
+                  class="hidden absolute inset-0 flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-neutral-900 via-zinc-900 to-black"
+                >
+                  <span
+                    class="font-serif text-xs tracking-[0.25em] text-gray-400 uppercase mb-2"
+                    >ANTES DO REPARO</span
+                  >
+                  <p
+                    class="font-sans font-bold text-base text-gray-200"
+                    x-text="comparisons[activeComparison].title"
+                  ></p>
+                  <p class="text-xs text-gray-400 mt-1">
+                    Registro inicial do dano na lataria antes da intervenção
+                  </p>
+                </div>
+              </div>
+
+              <!-- Indicadores ANTES e DEPOIS -->
+              <div
+                class="absolute top-4 left-4 z-20 px-3.5 py-1.5 bg-dark-900/90 border border-white/20 backdrop-blur-sm rounded-[2px] pointer-events-none"
+              >
+                <span
+                  class="font-sans font-extrabold text-[11px] tracking-[0.2em] text-white uppercase"
+                  >ANTES</span
+                >
+              </div>
+              <div
+                class="absolute top-4 right-4 z-20 px-3.5 py-1.5 bg-dark-900/90 border border-gold-500/50 backdrop-blur-sm rounded-[2px] pointer-events-none"
+              >
+                <span
+                  class="font-sans font-extrabold text-[11px] tracking-[0.2em] text-gold-500 uppercase"
+                  >DEPOIS</span
+                >
+              </div>
+
+              <!-- Linha Divisória e Manopla Central -->
+              <div
+                :style="'left: ' + sliderPos + '%;'"
+                class="absolute top-0 bottom-0 z-30 w-[2px] bg-gold-500 shadow-[0_0_15px_rgba(212,175,55,0.8)] pointer-events-none"
+              >
+                <div
+                  class="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-[2px] bg-dark-900 border-2 border-gold-500 flex items-center justify-center shadow-xl"
+                >
+                  <svg
+                    class="w-5 h-5 text-gold-500"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8 9l-3 3 3 3m8-6l3 3-3 3"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Legenda do Reparo Selecionado -->
+            <div
+              class="mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-dark-900 border border-gold-500/15 px-5 py-3.5 rounded-[2px]"
+            >
+              <p
+                class="font-sans font-bold text-xs sm:text-sm text-white"
+                x-text="comparisons[activeComparison].title"
+              ></p>
+              <p
+                class="text-xs text-gray-400"
+                x-text="comparisons[activeComparison].description"
+              ></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+             SEÇÃO 09 — DIFERENCIAIS DA MOURA ACADEMY (ALTERNÂNCIA OFF-WHITE)
+        ====================================================================== -->
+      <section
+        id="diferenciais"
+        class="py-20 lg:py-28 bg-offwhite text-dark-900 border-y border-gold-500/30"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <!-- Coluna Esquerda: Título e Destaque dos 7 Dias -->
+            <div class="lg:col-span-5 reveal-up">
+              <div class="flex items-center gap-3 mb-4">
+                <span
+                  class="font-serif font-bold text-sm text-gold-700 tracking-[0.2em]"
+                  >09</span
+                >
+                <span class="h-[1px] w-10 bg-gold-700"></span>
+                <span
+                  class="font-sans font-bold text-xs uppercase tracking-[0.22em] text-gold-700"
+                  >Diferenciais</span
+                >
+              </div>
+              <h2
+                class="font-sans font-black text-2xl sm:text-4xl uppercase tracking-tight leading-[1.15] text-dark-900 mb-6"
+              >
+                POR QUE ESCOLHER A MOURA ACADEMY?
+              </h2>
+
+              <div
+                class="bg-dark-900 text-white p-6 sm:p-7 rounded-[2px] border-l-4 border-gold-500 shadow-lg"
+              >
+                <span
+                  class="font-sans text-[10px] font-bold uppercase tracking-[0.22em] text-gold-500 block mb-2"
+                >
+                  DIFERENCIAL DE CARGA PRÁTICA
+                </span>
+                <h3
+                  class="font-sans font-extrabold text-base sm:text-lg uppercase text-white mb-2.5"
+                >
+                  7 dias intensivos para amadurecer a técnica
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                  O martelinho de ouro exige coordenação motora fina e leitura
+                  visual apurada. A estrutura de sete dias intensivos foi
+                  pensada para proporcionar mais tempo de bancada, repetição
+                  guiada e acompanhamento próximo do que formações mais curtas,
+                  permitindo que o iniciante absorva cada etapa com segurança.
+                </p>
+              </div>
+            </div>
+
+            <!-- Coluna Direita: Os 5 Diferenciais Comerciais -->
+            <div class="lg:col-span-7 reveal-up space-y-4">
+              <div
+                class="bg-white border border-dark-900/10 p-6 rounded-[2px] flex items-start gap-5 shadow-sm"
+              >
+                <span
+                  class="font-serif font-bold text-2xl text-gold-600 leading-none"
+                  >01</span
+                >
+                <div>
+                  <h3
+                    class="font-sans font-extrabold text-base uppercase text-dark-900 mb-1"
+                  >
+                    Acompanhamento exclusivo de Arthur Moura
+                  </h3>
+                  <p class="text-sm text-dark-700 leading-relaxed">
+                    Orientação direta do instrutor em cada exercício, ajustando
+                    postura, ângulo de ferramenta e controle de força.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="bg-white border border-dark-900/10 p-6 rounded-[2px] flex items-start gap-5 shadow-sm"
+              >
+                <span
+                  class="font-serif font-bold text-2xl text-gold-600 leading-none"
+                  >02</span
+                >
+                <div>
+                  <h3
+                    class="font-sans font-extrabold text-base uppercase text-dark-900 mb-1"
+                  >
+                    Cinco anos de experiência consolidada na área
+                  </h3>
+                  <p class="text-sm text-dark-700 leading-relaxed">
+                    Aprendizado baseado em vivência real de mercado e
+                    especialização em acabamento automotivo.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="bg-white border border-dark-900/10 p-6 rounded-[2px] flex items-start gap-5 shadow-sm"
+              >
+                <span
+                  class="font-serif font-bold text-2xl text-gold-600 leading-none"
+                  >03</span
+                >
+                <div>
+                  <h3
+                    class="font-sans font-extrabold text-base uppercase text-dark-900 mb-1"
+                  >
+                    Conteúdo equilibrado entre teoria e prática intensiva
+                  </h3>
+                  <p class="text-sm text-dark-700 leading-relaxed">
+                    Fundamentos objetivos combinados com horas de prática real
+                    em peças e veículos.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="bg-white border border-dark-900/10 p-6 rounded-[2px] flex items-start gap-5 shadow-sm"
+              >
+                <span
+                  class="font-serif font-bold text-2xl text-gold-600 leading-none"
+                  >04</span
+                >
+                <div>
+                  <h3
+                    class="font-sans font-extrabold text-base uppercase text-dark-900 mb-1"
+                  >
+                    Orientações estratégicas sobre atendimento ao cliente
+                  </h3>
+                  <p class="text-sm text-dark-700 leading-relaxed">
+                    Postura profissional, avaliação transparente do dano e
+                    comunicação clara para gerar confiança.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="bg-white border border-dark-900/10 p-6 rounded-[2px] flex items-start gap-5 shadow-sm"
+              >
+                <span
+                  class="font-serif font-bold text-2xl text-gold-600 leading-none"
+                  >05</span
+                >
+                <div>
+                  <h3
+                    class="font-sans font-extrabold text-base uppercase text-dark-900 mb-1"
+                  >
+                    Orientações sobre vendas e precificação de serviços
+                  </h3>
+                  <p class="text-sm text-dark-700 leading-relaxed">
+                    Direcionamento prático para estruturar orçamentos de reparo
+                    e dar os primeiros passos comerciais com segurança.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+             SEÇÃO 10 — O QUE ESTÁ INCLUSO & BÔNUS EXCLUSIVOS
+        ====================================================================== -->
+      <section id="incluso" class="py-20 lg:py-28 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl mb-14 reveal-up">
+            <div class="flex items-center gap-3 mb-4">
+              <span
+                class="font-serif font-bold text-sm text-gold-500 tracking-[0.2em]"
+                >10</span
+              >
+              <span class="h-[1px] w-10 bg-gold-500"></span>
+              <span
+                class="font-sans font-bold text-xs uppercase tracking-[0.22em] text-gold-500"
+                >O Que Está Incluso</span
+              >
+            </div>
+            <h2
+              class="font-sans font-black text-2xl sm:text-4xl uppercase tracking-tight leading-[1.15] text-white"
+            >
+              UMA FORMAÇÃO QUE VAI ALÉM DA TÉCNICA.
+            </h2>
+          </div>
+
+          <!-- 4 Benefícios Principais Inclusos -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16 reveal-up"
+          >
+            <div class="card-luxury border-gold-500/25">
+              <div
+                class="w-10 h-10 border border-gold-500/40 bg-dark-900 flex items-center justify-center text-gold-500 mb-5"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085"
+                  />
+                </svg>
+              </div>
+              <h3
+                class="font-sans font-bold text-sm uppercase tracking-wider text-white mb-2"
+              >
+                Ferramentas e materiais disponibilizados durante o curso
+              </h3>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Você utiliza toda a estrutura de ferramentas e equipamentos da
+                academia durante os 7 dias de aula.
+              </p>
+            </div>
+
+            <div class="card-luxury border-gold-500/25">
+              <div
+                class="w-10 h-10 border border-gold-500/40 bg-dark-900 flex items-center justify-center text-gold-500 mb-5"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                  />
+                </svg>
+              </div>
+              <h3
+                class="font-sans font-bold text-sm uppercase tracking-wider text-white mb-2"
+              >
+                Aulas teóricas e práticas
+              </h3>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Formação presencial completa unindo fundamentos técnicos e
+                prática intensiva supervisionada.
+              </p>
+            </div>
+
+            <div class="card-luxury border-gold-500/25">
+              <div
+                class="w-10 h-10 border border-gold-500/40 bg-dark-900 flex items-center justify-center text-gold-500 mb-5"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+                  />
+                </svg>
+              </div>
+              <h3
+                class="font-sans font-bold text-sm uppercase tracking-wider text-white mb-2"
+              >
+                Certificado de conclusão
+              </h3>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Certificação emitida pela Moura Academy ao término da formação
+                presencial.
+              </p>
+            </div>
+
+            <div class="card-luxury border-gold-500/25">
+              <div
+                class="w-10 h-10 border border-gold-500/40 bg-dark-900 flex items-center justify-center text-gold-500 mb-5"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+                  />
+                </svg>
+              </div>
+              <h3
+                class="font-sans font-bold text-sm uppercase tracking-wider text-white mb-2"
+              >
+                Suporte vitalício com Arthur Moura
+              </h3>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                Canal direto de apoio após a formação para tirar dúvidas sobre
+                casos reais do seu dia a dia.
+              </p>
+            </div>
+          </div>
+
+          <!-- Subseção: Bônus Exclusivos -->
+          <div
+            class="bg-dark-800 border border-gold-500/35 p-7 sm:p-10 rounded-[2px] reveal-up"
+          >
+            <div
+              class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-gold-500/20"
+            >
+              <div>
+                <span
+                  class="text-[11px] font-sans font-bold uppercase tracking-[0.24em] text-gold-500 block mb-1"
+                  >MATERIAIS DE APOIO</span
+                >
+                <h3
+                  class="font-sans font-black text-xl sm:text-2xl uppercase tracking-wide text-white"
+                >
+                  BÔNUS EXCLUSIVOS
+                </h3>
+              </div>
+              <span class="text-xs text-gray-400"
+                >Inclusos para todos os alunos da formação</span
+              >
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              <div
+                class="bg-dark-900 border border-gold-500/20 p-5 rounded-[2px]"
+              >
+                <span
+                  class="font-serif font-bold text-lg text-gold-500 block mb-2"
+                  >01</span
+                >
+                <h4
+                  class="font-sans font-bold text-sm uppercase text-white mb-1.5"
+                >
+                  Manual de apoio profissional
+                </h4>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                  Material de consulta rápida para revisar fundamentos, etapas e
+                  boas práticas técnicas.
+                </p>
+              </div>
+
+              <div
+                class="bg-dark-900 border border-gold-500/20 p-5 rounded-[2px]"
+              >
+                <span
+                  class="font-serif font-bold text-lg text-gold-500 block mb-2"
+                  >02</span
+                >
+                <h4
+                  class="font-sans font-bold text-sm uppercase text-white mb-1.5"
+                >
+                  Planilha de precificação
+                </h4>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                  Ferramenta prática para auxiliar no cálculo e na organização
+                  dos valores dos seus serviços.
+                </p>
+              </div>
+
+              <div
+                class="bg-dark-900 border border-gold-500/20 p-5 rounded-[2px]"
+              >
+                <span
+                  class="font-serif font-bold text-lg text-gold-500 block mb-2"
+                  >03</span
+                >
+                <h4
+                  class="font-sans font-bold text-sm uppercase text-white mb-1.5"
+                >
+                  Guia de atendimento e vendas
+                </h4>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                  Orientações objetivas para abordar clientes, avaliar veículos
+                  e apresentar orçamentos.
+                </p>
+              </div>
+
+              <div
+                class="bg-dark-900 border border-gold-500/20 p-5 rounded-[2px]"
+              >
+                <span
+                  class="font-serif font-bold text-lg text-gold-500 block mb-2"
+                  >04</span
+                >
+                <h4
+                  class="font-sans font-bold text-sm uppercase text-white mb-1.5"
+                >
+                  Aula bônus: primeiros passos no mercado
+                </h4>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                  Direcionamento sobre como iniciar sua atuação após concluir os
+                  7 dias de imersão.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+             SEÇÃO 11 — DEPOIMENTOS (ESPAÇOS RESERVADOS SEM DADOS FICTÍCIOS)
+        ====================================================================== -->
+      <section
+        id="depoimentos"
+        class="py-20 lg:py-28 bg-dark-800 border-t border-gold-500/15"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl mb-14 reveal-up">
+            <div class="flex items-center gap-3 mb-4">
+              <span
+                class="font-serif font-bold text-sm text-gold-500 tracking-[0.2em]"
+                >11</span
+              >
+              <span class="h-[1px] w-10 bg-gold-500"></span>
+              <span
+                class="font-sans font-bold text-xs uppercase tracking-[0.22em] text-gold-500"
+                >Depoimentos</span
+              >
+            </div>
+            <h2
+              class="font-sans font-black text-2xl sm:text-4xl uppercase tracking-tight leading-[1.15] text-white mb-3"
+            >
+              QUEM APRENDE, TEM UMA HISTÓRIA PARA CONTAR.
+            </h2>
+            <p class="text-gray-400 text-sm sm:text-base">
+              Espaço dedicado aos relatos autorizados e vídeos dos alunos que
+              vivenciaram a formação presencial da Moura Academy.
+            </p>
+          </div>
+
+          <!-- Renderização Dinâmica: Exibe Depoimentos Reais quando cadastrados em ACADEMY_CONFIG.testimonials ou Espaços Reservados Oficiais -->
+          <template x-if="testimonials.length > 0">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-up">
+              <template
+                x-for="(item, idx) in testimonials"
+                :key="'testi-' + idx"
+              >
+                <article class="card-luxury flex flex-col justify-between">
+                  <div>
+                    <template x-if="item.videoUrl">
+                      <div
+                        class="aspect-video mb-5 bg-dark-900 border border-gold-500/20 overflow-hidden rounded-[2px]"
+                      >
+                        <iframe
+                          :src="item.videoUrl"
+                          :title="'Depoimento de ' + item.name"
+                          class="w-full h-full"
+                          loading="lazy"
+                          allowfullscreen
+                        ></iframe>
+                      </div>
+                    </template>
+                    <p
+                      class="text-sm text-gray-300 leading-relaxed italic mb-6"
+                      x-text="'“' + item.quote + '”'"
+                    ></p>
+                  </div>
+                  <div
+                    class="flex items-center gap-3.5 pt-4 border-t border-gold-500/15"
+                  >
+                    <img
+                      x-show="item.photo"
+                      :src="item.photo"
+                      :alt="item.name"
+                      class="w-11 h-11 rounded-[2px] object-cover border border-gold-500/40"
+                    />
+                    <div>
+                      <p
+                        class="font-sans font-bold text-sm text-white"
+                        x-text="item.name"
+                      ></p>
+                      <p
+                        class="text-xs text-gold-500"
+                        x-text="item.origin || 'Aluno(a) Moura Academy'"
+                      ></p>
+                    </div>
+                  </div>
+                </article>
+              </template>
+            </div>
+          </template>
+
+          <template x-if="testimonials.length === 0">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-up">
+              <!-- Espaço Reservado 01 -->
+              <div
+                class="bg-dark-900 border border-dashed border-gold-500/30 p-7 rounded-[2px] flex flex-col justify-between"
+              >
+                <div>
+                  <div class="flex items-center justify-between mb-6">
+                    <span
+                      class="px-2.5 py-1 bg-dark-800 border border-gold-500/25 text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-gold-500"
+                    >
+                      Relato em Vídeo / Texto
+                    </span>
+                    <span class="font-serif text-sm text-gray-600">01</span>
+                  </div>
+                  <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Espaço reservado para publicação de depoimento oficial e
+                    autorizado de aluno(a) formado(a) na Moura Academy.
+                  </p>
+                </div>
+                <div
+                  class="flex items-center gap-3.5 pt-4 border-t border-white/5"
+                >
+                  <div
+                    class="w-10 h-10 bg-dark-800 border border-gold-500/20 flex items-center justify-center text-gold-500/60"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p
+                      class="font-sans font-bold text-xs uppercase tracking-wider text-gray-300"
+                    >
+                      Aluno(a) Autorizado(a)
+                    </p>
+                    <p class="text-[11px] text-gray-500">
+                      Turma Presencial • Araguaína – TO
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Espaço Reservado 02 -->
+              <div
+                class="bg-dark-900 border border-dashed border-gold-500/30 p-7 rounded-[2px] flex flex-col justify-between"
+              >
+                <div>
+                  <div class="flex items-center justify-between mb-6">
+                    <span
+                      class="px-2.5 py-1 bg-dark-800 border border-gold-500/25 text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-gold-500"
+                    >
+                      Relato em Vídeo / Texto
+                    </span>
+                    <span class="font-serif text-sm text-gray-600">02</span>
+                  </div>
+                  <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Espaço reservado para compartilhar a experiência prática
+                    durante os sete dias de imersão com Arthur Moura.
+                  </p>
+                </div>
+                <div
+                  class="flex items-center gap-3.5 pt-4 border-t border-white/5"
+                >
+                  <div
+                    class="w-10 h-10 bg-dark-800 border border-gold-500/20 flex items-center justify-center text-gold-500/60"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p
+                      class="font-sans font-bold text-xs uppercase tracking-wider text-gray-300"
+                    >
+                      Aluno(a) Autorizado(a)
+                    </p>
+                    <p class="text-[11px] text-gray-500">
+                      Turma Presencial • Araguaína – TO
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Espaço Reservado 03 (Suporte a Vídeo) -->
+              <div
+                class="bg-dark-900 border border-dashed border-gold-500/30 p-7 rounded-[2px] flex flex-col justify-between"
+              >
+                <div>
+                  <div class="flex items-center justify-between mb-6">
+                    <span
+                      class="px-2.5 py-1 bg-dark-800 border border-gold-500/25 text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-gold-500"
+                    >
+                      Depoimento em Vídeo
+                    </span>
+                    <span class="font-serif text-sm text-gray-600">03</span>
+                  </div>
+                  <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Área preparada para incorporação de vídeos reais de
+                    depoimentos autorizados pelos participantes da formação.
+                  </p>
+                </div>
+                <div
+                  class="flex items-center gap-3.5 pt-4 border-t border-white/5"
+                >
+                  <div
+                    class="w-10 h-10 bg-dark-800 border border-gold-500/20 flex items-center justify-center text-gold-500/60"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p
+                      class="font-sans font-bold text-xs uppercase tracking-wider text-gray-300"
+                    >
+                      Vídeo Oficial
+                    </p>
+                    <p class="text-[11px] text-gray-500">Moura Academy</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+             SEÇÃO 12 — PERGUNTAS FREQUENTES (ACCORDION)
+        ====================================================================== -->
+      <section
+        id="faq"
+        class="py-20 lg:py-28 bg-dark-900 border-t border-gold-500/15"
+      >
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-14 reveal-up">
+            <div class="inline-flex items-center gap-3 mb-4">
+              <span
+                class="font-serif font-bold text-sm text-gold-500 tracking-[0.2em]"
+                >12</span
+              >
+              <span class="h-[1px] w-10 bg-gold-500"></span>
+              <span
+                class="font-sans font-bold text-xs uppercase tracking-[0.22em] text-gold-500"
+                >Tire Suas Dúvidas</span
+              >
+            </div>
+            <h2
+              class="font-sans font-black text-2xl sm:text-4xl uppercase tracking-tight text-white"
+            >
+              PERGUNTAS FREQUENTES.
+            </h2>
+          </div>
+
+          <div class="space-y-3 reveal-up">
+            <template x-for="(faq, index) in faqs" :key="'faq-' + index">
+              <div
+                class="bg-dark-800 border border-gold-500/15 rounded-[2px] overflow-hidden transition-colors"
+                :class="activeFaq === index ? 'border-gold-500/45' : ''"
+              >
+                <h3>
+                  <button
+                    type="button"
+                    @click="toggleFaq(index)"
+                    :aria-expanded="(activeFaq === index).toString()"
+                    class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
+                  >
+                    <span
+                      class="font-sans font-bold text-sm sm:text-base text-white"
+                      x-text="faq.question"
+                    ></span>
+                    <span
+                      class="w-7 h-7 shrink-0 border border-gold-500/35 flex items-center justify-center text-gold-500 transition-transform duration-300"
+                      :class="activeFaq === index ? 'rotate-45 bg-gold-500 text-dark-900' : ''"
+                    >
+                      <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M12 4.5v15m7.5-7.5h-15"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </h3>
+                <div
+                  x-show="activeFaq === index"
+                  x-transition:enter="transition ease-out duration-200"
+                  x-transition:enter-start="opacity-0 -translate-y-1"
+                  x-transition:enter-end="opacity-100 translate-y-0"
+                  style="display: none"
+                  class="px-6 pb-5 pt-1 text-xs sm:text-sm text-gray-300 leading-relaxed border-t border-white/5"
+                >
+                  <p x-text="faq.answer"></p>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+             SEÇÃO 13 — INSCRIÇÃO E CONVERSÃO (SEM EXIBIÇÃO DE PREÇOS)
+        ====================================================================== -->
+      <section
+        id="inscricao"
+        class="py-20 lg:py-28 bg-dark-800 border-t border-gold-500/25 relative overflow-hidden"
+      >
+        <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gold-500/10 blur-[140px] rounded-full"
+          ></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="bg-dark-900 border border-gold-500/40 p-8 sm:p-12 lg:p-14 rounded-[2px] gold-glow text-center reveal-up"
+          >
+            <div class="inline-flex items-center gap-3 mb-4">
+              <span
+                class="font-serif font-bold text-sm text-gold-500 tracking-[0.2em]"
+                >13</span
+              >
+              <span class="h-[1px] w-10 bg-gold-500"></span>
+              <span
+                class="font-sans font-bold text-xs uppercase tracking-[0.22em] text-gold-500"
+                >Inscrição</span
+              >
+            </div>
+
+            <h2
+              class="font-sans font-black text-2xl sm:text-4xl lg:text-[2.6rem] uppercase tracking-tight leading-[1.15] text-white mb-4"
+            >
+              SUA PRÓXIMA PROFISSÃO PODE COMEÇAR AQUI.
+            </h2>
+
+            <p
+              class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-9 leading-relaxed"
+            >
+              Entre em contato e descubra como participar da próxima formação da
+              Moura Academy.
+            </p>
+
+            <!-- Dois Caminhos Principais de Conversão -->
+            <div
+              class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4"
+            >
+              <button
+                type="button"
+                @click="openEnrollModal('Seção Conversão')"
+                class="btn-premium px-8 py-4 text-xs sm:text-sm cursor-pointer"
+              >
+                QUERO ME INSCREVER
+              </button>
+              <a
+                :href="getWhatsAppUrl('duvidas')"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-secondary px-8 py-4 text-xs sm:text-sm text-center"
+              >
+                TIRAR DÚVIDAS PELO WHATSAPP
+              </a>
+            </div>
+
+            <p class="text-xs text-gray-500 mt-6">
+              Atendimento personalizado para informações sobre cronograma,
+              disponibilidade de vagas e orientações iniciais.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+             SEÇÃO 14 — CONTATO E LOCALIZAÇÃO
+        ====================================================================== -->
+      <section
+        id="contato"
+        class="py-20 lg:py-24 bg-dark-900 border-t border-gold-500/15"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal-up"
+          >
+            <div class="lg:col-span-6">
+              <div class="flex items-center gap-3 mb-4">
+                <span
+                  class="font-serif font-bold text-sm text-gold-500 tracking-[0.2em]"
+                  >14</span
+                >
+                <span class="h-[1px] w-10 bg-gold-500"></span>
+                <span
+                  class="font-sans font-bold text-xs uppercase tracking-[0.22em] text-gold-500"
+                  >Contato e Localização</span
+                >
+              </div>
+              <h2
+                class="font-sans font-black text-2xl sm:text-4xl uppercase tracking-tight leading-[1.15] text-white mb-4"
+              >
+                COMECE SUA JORNADA NA MOURA ACADEMY.
+              </h2>
+              <p
+                class="text-gray-400 text-sm sm:text-base leading-relaxed mb-8"
+              >
+                Fale diretamente com nossa equipe de atendimento em Araguaína –
+                Tocantins para esclarecer dúvidas sobre a formação presencial de
+                7 dias.
+              </p>
+
+              <div class="flex flex-wrap gap-4">
+                <a
+                  :href="getWhatsAppUrl('geral')"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-premium px-6 py-3.5 text-xs"
+                >
+                  Falar no WhatsApp
+                </a>
+                <a
+                  :href="config.googleMapsUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-secondary px-6 py-3.5 text-xs"
+                >
+                  Abrir no Google Maps
+                </a>
+              </div>
+            </div>
+
+            <!-- Cards de Canais Oficiais -->
+            <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <a
+                :href="getWhatsAppUrl('geral')"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-luxury group block"
+              >
+                <span
+                  class="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-gold-500 block mb-2"
+                  >WhatsApp Oficial</span
+                >
+                <p
+                  class="font-sans font-bold text-base text-white group-hover:text-gold-500 transition-colors"
+                  x-text="config.whatsappDisplay"
+                ></p>
+                <p class="text-xs text-gray-400 mt-1">
+                  Atendimento sobre turmas e inscrições
+                </p>
+              </a>
+
+              <a
+                :href="config.instagramUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-luxury group block"
+              >
+                <span
+                  class="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-gold-500 block mb-2"
+                  >Instagram</span
+                >
+                <p
+                  class="font-sans font-bold text-base text-white group-hover:text-gold-500 transition-colors"
+                  x-text="config.instagramHandle"
+                ></p>
+                <p class="text-xs text-gray-400 mt-1">
+                  Acompanhe bastidores e trabalhos
+                </p>
+              </a>
+
+              <div
+                class="card-luxury sm:col-span-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+              >
+                <div>
+                  <span
+                    class="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-gold-500 block mb-1"
+                    >Localização das Aulas Presenciais</span
+                  >
+                  <p class="font-sans font-bold text-base text-white">
+                    Araguaína – Tocantins, Brasil
+                  </p>
+                  <p class="text-xs text-gray-400 mt-0.5">
+                    O endereço detalhado é enviado aos inscritos confirmados.
+                  </p>
+                </div>
+                <a
+                  :href="config.googleMapsUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs font-sans font-bold uppercase tracking-wider text-gold-500 hover:text-gold-100 underline underline-offset-4 shrink-0"
+                >
+                  Ver no mapa &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================================
+         RODAPÉ INSTITUCIONAL
+    ====================================================================== -->
+    <footer class="bg-dark-900 border-t border-gold-500/20 pt-14 pb-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/10"
+        >
+          <!-- Marca e Frase Institucional -->
+          <div class="md:col-span-5">
+            <a href="#inicio" class="inline-flex items-center gap-3 mb-4">
+              <div
+                class="w-9 h-9 border border-gold-500/60 bg-dark-800 flex items-center justify-center rounded-[2px]"
+              >
+                <span class="font-serif font-bold text-lg gold-text-gradient"
+                  >M</span
+                >
+              </div>
+              <div class="flex flex-col">
+                <span
+                  class="font-sans font-extrabold text-base tracking-[0.2em] text-white leading-none"
+                  >MOURA</span
+                >
+                <span
+                  class="font-serif text-[10px] tracking-[0.32em] text-gold-500 uppercase mt-1 leading-none"
+                  >Academy</span
+                >
+              </div>
+            </a>
+            <p class="font-serif text-sm text-gold-100 tracking-wide mb-3">
+              “Aprenda uma técnica. Desenvolva uma profissão.”
+            </p>
+            <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+              Formação profissional presencial em martelinho de ouro em
+              Araguaína – Tocantins.
+            </p>
+          </div>
+
+          <!-- Navegação -->
+          <div class="md:col-span-4">
+            <h3
+              class="font-sans font-bold text-xs uppercase tracking-[0.2em] text-gold-500 mb-4"
+            >
+              Navegação
+            </h3>
+            <ul class="grid grid-cols-2 gap-2.5 text-xs text-gray-400">
+              <li>
+                <a href="#inicio" class="hover:text-white transition-colors"
+                  >Início</a
+                >
+              </li>
+              <li>
+                <a href="#academia" class="hover:text-white transition-colors"
+                  >A Academia</a
+                >
+              </li>
+              <li>
+                <a href="#professor" class="hover:text-white transition-colors"
+                  >O Professor</a
+                >
+              </li>
+              <li>
+                <a href="#formacao" class="hover:text-white transition-colors"
+                  >Formação</a
+                >
+              </li>
+              <li>
+                <a href="#grade" class="hover:text-white transition-colors"
+                  >Grade Curricular</a
+                >
+              </li>
+              <li>
+                <a href="#trabalhos" class="hover:text-white transition-colors"
+                  >Trabalhos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#depoimentos"
+                  class="hover:text-white transition-colors"
+                  >Depoimentos</a
+                >
+              </li>
+              <li>
+                <a href="#contato" class="hover:text-white transition-colors"
+                  >Contato</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contatos e Redes -->
+          <div class="md:col-span-3">
+            <h3
+              class="font-sans font-bold text-xs uppercase tracking-[0.2em] text-gold-500 mb-4"
+            >
+              Atendimento
+            </h3>
+            <ul class="space-y-2.5 text-xs text-gray-400">
+              <li>Araguaína – Tocantins</li>
+              <li>
+                <a
+                  :href="getWhatsAppUrl('geral')"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-gold-500 transition-colors"
+                  x-text="'WhatsApp: ' + config.whatsappDisplay"
+                ></a>
+              </li>
+              <li>
+                <a
+                  :href="config.instagramUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-gold-500 transition-colors"
+                  x-text="'Instagram: ' + config.instagramHandle"
+                ></a>
+              </li>
+              <li class="pt-1">
+                <button
+                  type="button"
+                  @click="privacyModalOpen = true"
+                  class="text-gray-400 hover:text-white underline underline-offset-4 cursor-pointer"
+                >
+                  Aviso de Privacidade (LGPD)
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500"
+        >
+          <p>
+            &copy; <span x-text="new Date().getFullYear()"></span> Moura
+            Academy. Todos os direitos reservados.
+          </p>
+          <p>Araguaína – TO • Formação Profissional em Martelinho de Ouro</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =====================================================================
+         BOTÃO FLUTUANTE DE WHATSAPP
+    ====================================================================== -->
+    <a
+      :href="getWhatsAppUrl('geral')"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar com a Moura Academy pelo WhatsApp"
+      class="fixed bottom-5 right-5 z-40 group flex items-center gap-3 bg-dark-900/95 border border-gold-500/60 hover:border-gold-500 px-4 py-3 rounded-[2px] shadow-[0_10px_30px_rgba(0,0,0,0.85)] gold-glow transition-all duration-300 hover:-translate-y-0.5"
+    >
+      <span
+        class="w-8 h-8 rounded-[2px] gold-metallic-gradient text-dark-900 flex items-center justify-center shrink-0"
+      >
+        <svg
+          class="w-4 h-4 fill-current"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"
+          />
+        </svg>
+      </span>
+      <span
+        class="hidden sm:inline font-sans font-bold text-xs uppercase tracking-[0.14em] text-white group-hover:text-gold-100"
+      >
+        Falar no WhatsApp
+      </span>
+    </a>
+
+    <!-- =====================================================================
+         MODAL DE INTERESSE / INSCRIÇÃO (COM VALIDAÇÃO E LGPD)
+    ====================================================================== -->
+    <div
+      x-show="enrollModalOpen"
+      x-transition.opacity
+      style="display: none"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-enroll-title"
+      class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm overflow-y-auto"
+    >
+      <div
+        @click.away="closeEnrollModal()"
+        class="relative w-full max-w-xl bg-dark-800 border border-gold-500/45 p-6 sm:p-9 rounded-[2px] shadow-2xl my-8"
+      >
+        <!-- Botão Fechar -->
+        <button
+          type="button"
+          @click="closeEnrollModal()"
+          aria-label="Fechar formulário de interesse"
+          class="absolute top-4 right-4 w-9 h-9 border border-white/15 bg-dark-900 text-gray-400 hover:text-white hover:border-gold-500 flex items-center justify-center rounded-[2px] cursor-pointer"
+        >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
+        <span
+          class="font-sans text-[10px] font-bold uppercase tracking-[0.24em] text-gold-500 block mb-2"
+        >
+          MOURA ACADEMY • ARAGUAÍNA – TO
+        </span>
+        <h2
+          id="modal-enroll-title"
+          class="font-sans font-black text-xl sm:text-2xl uppercase tracking-tight text-white mb-2"
+        >
+          Manifestação de Interesse
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-400 mb-6">
+          Preencha seus dados para receber informações detalhadas sobre as
+          próximas turmas presenciais da formação de 7 dias.
+        </p>
+
+        <!-- Formulário com Validação -->
+        <form
+          @submit.prevent="submitInterestForm()"
+          novalidate
+          x-show="formStatus !== 'success'"
+          class="space-y-4"
+        >
+          <div>
+            <label
+              for="lead-name"
+              class="block text-xs font-sans font-semibold uppercase tracking-wider text-gray-300 mb-1.5"
+            >
+              Nome completo *
+            </label>
+            <input
+              id="lead-name"
+              type="text"
+              x-model.trim="formData.name"
+              placeholder="Digite seu nome completo"
+              required
+              class="input-premium"
+            />
+            <p
+              x-show="formErrors.name"
+              x-text="formErrors.name"
+              class="text-xs text-red-400 mt-1"
+            ></p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label
+                for="lead-whatsapp"
+                class="block text-xs font-sans font-semibold uppercase tracking-wider text-gray-300 mb-1.5"
+              >
+                WhatsApp *
+              </label>
+              <input
+                id="lead-whatsapp"
+                type="tel"
+                x-model="formData.whatsapp"
+                @input="formatPhoneInput()"
+                placeholder="(63) 99999-9999"
+                required
+                class="input-premium"
+              />
+              <p
+                x-show="formErrors.whatsapp"
+                x-text="formErrors.whatsapp"
+                class="text-xs text-red-400 mt-1"
+              ></p>
+            </div>
+
+            <div>
+              <label
+                for="lead-email"
+                class="block text-xs font-sans font-semibold uppercase tracking-wider text-gray-300 mb-1.5"
+              >
+                E-mail *
+              </label>
+              <input
+                id="lead-email"
+                type="email"
+                x-model.trim="formData.email"
+                placeholder="seuemail@exemplo.com"
+                required
+                class="input-premium"
+              />
+              <p
+                x-show="formErrors.email"
+                x-text="formErrors.email"
+                class="text-xs text-red-400 mt-1"
+              ></p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label
+                for="lead-city"
+                class="block text-xs font-sans font-semibold uppercase tracking-wider text-gray-300 mb-1.5"
+              >
+                Cidade e Estado *
+              </label>
+              <input
+                id="lead-city"
+                type="text"
+                x-model.trim="formData.cityState"
+                placeholder="Ex: Araguaína - TO"
+                required
+                class="input-premium"
+              />
+              <p
+                x-show="formErrors.cityState"
+                x-text="formErrors.cityState"
+                class="text-xs text-red-400 mt-1"
+              ></p>
+            </div>
+
+            <div>
+              <label
+                for="lead-experience"
+                class="block text-xs font-sans font-semibold uppercase tracking-wider text-gray-300 mb-1.5"
+              >
+                Já trabalha com martelinho de ouro? *
+              </label>
+              <select
+                id="lead-experience"
+                x-model="formData.experience"
+                class="input-premium"
+              >
+                <option value="Não">Não (quero aprender do zero)</option>
+                <option value="Sim">Sim (já atuo na área)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label
+              for="lead-notes"
+              class="block text-xs font-sans font-semibold uppercase tracking-wider text-gray-300 mb-1.5"
+            >
+              Mensagem opcional
+            </label>
+            <textarea
+              id="lead-notes"
+              rows="2"
+              x-model.trim="formData.notes"
+              placeholder="Conte brevemente seu objetivo ou dúvida sobre a formação (opcional)"
+              class="input-premium resize-none"
+            ></textarea>
+          </div>
+
+          <!-- Consentimento LGPD -->
+          <div class="pt-1">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                x-model="formData.lgpdConsent"
+                class="mt-1 accent-[#D4AF37] w-4 h-4 rounded-[1px]"
+              />
+              <span class="text-xs text-gray-400 leading-relaxed">
+                Concordo com o envio dos meus dados exclusivamente para
+                atendimento da Moura Academy sobre a formação profissional,
+                conforme o
+                <button
+                  type="button"
+                  @click="privacyModalOpen = true"
+                  class="text-gold-500 underline"
+                >
+                  Aviso de Privacidade (LGPD)</button
+                >.
+              </span>
+            </label>
+            <p
+              x-show="formErrors.lgpdConsent"
+              x-text="formErrors.lgpdConsent"
+              class="text-xs text-red-400 mt-1"
+            ></p>
+          </div>
+
+          <!-- Feedback de Erro Geral -->
+          <div
+            x-show="formStatus === 'error'"
+            class="p-3 bg-red-950/60 border border-red-500/40 text-xs text-red-200 rounded-[2px]"
+          >
+            Não foi possível iniciar o encaminhamento automático. Você pode
+            concluir seu contato diretamente pelo botão do WhatsApp abaixo.
+          </div>
+
+          <div class="pt-2 flex flex-col sm:flex-row gap-3">
+            <button
+              type="submit"
+              :disabled="formStatus === 'submitting'"
+              class="flex-1 btn-premium py-3.5 text-xs text-center disabled:opacity-60 cursor-pointer"
+            >
+              <span x-show="formStatus !== 'submitting'">ENVIAR INTERESSE</span>
+              <span x-show="formStatus === 'submitting'"
+                >PREPARANDO ATENDIMENTO...</span
+              >
+            </button>
+          </div>
+        </form>
+
+        <!-- Confirmação Visual Honesta Após Envio -->
+        <div
+          x-show="formStatus === 'success'"
+          style="display: none"
+          class="bg-dark-900 border border-gold-500/40 p-6 rounded-[2px] text-center space-y-4"
+        >
+          <div
+            class="w-12 h-12 mx-auto border border-gold-500 bg-gold-500/10 text-gold-500 flex items-center justify-center rounded-[2px]"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 12.75l6 6 9-13.5"
+              />
+            </svg>
+          </div>
+          <h3 class="font-sans font-extrabold text-lg uppercase text-white">
+            Dados Prontos para Atendimento
+          </h3>
+          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Recebemos sua manifestação de interesse,
+            <strong class="text-white" x-text="formData.name"></strong>. Como as
+            vagas são organizadas por turma presencial, clique abaixo para
+            encaminhar seus dados diretamente ao WhatsApp oficial da Moura
+            Academy e receber as informações das próximas datas.
+          </p>
+          <div class="pt-2 flex flex-col gap-3">
+            <a
+              :href="generatedLeadWhatsAppUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-premium py-3.5 px-6 text-xs text-center"
+            >
+              CONCLUIR ENCAMINHAMENTO NO WHATSAPP
+            </a>
+            <button
+              type="button"
+              @click="resetForm()"
+              class="text-xs text-gray-400 hover:text-white underline cursor-pointer"
+            >
+              Editar dados enviados
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         MODAL DE PRIVACIDADE E LGPD
+    ====================================================================== -->
+    <div
+      x-show="privacyModalOpen"
+      x-transition.opacity
+      style="display: none"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-privacy-title"
+      class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm"
+    >
+      <div
+        @click.away="privacyModalOpen = false"
+        class="relative w-full max-w-lg bg-dark-800 border border-gold-500/40 p-6 sm:p-8 rounded-[2px]"
+      >
+        <button
+          type="button"
+          @click="privacyModalOpen = false"
+          aria-label="Fechar aviso de privacidade"
+          class="absolute top-4 right-4 w-8 h-8 border border-white/15 bg-dark-900 text-gray-400 hover:text-white flex items-center justify-center rounded-[2px] cursor-pointer"
+        >
+          &times;
+        </button>
+        <span
+          class="text-[10px] font-sans font-bold uppercase tracking-[0.22em] text-gold-500 block mb-2"
+          >TRANSPARÊNCIA &amp; LGPD</span
+        >
+        <h2
+          id="modal-privacy-title"
+          class="font-sans font-extrabold text-lg uppercase text-white mb-4"
+        >
+          Aviso de Privacidade
+        </h2>
+        <div class="space-y-3 text-xs text-gray-300 leading-relaxed">
+          <p>
+            Em conformidade com a Lei Geral de Proteção de Dados (Lei nº
+            13.709/2018 — LGPD), a
+            <strong class="text-white">Moura Academy</strong> coleta apenas os
+            dados estritamente necessários (nome, WhatsApp, e-mail,
+            cidade/estado e experiência prévia) para responder à sua solicitação
+            de informações sobre a formação presencial em martelinho de ouro.
+          </p>
+          <p>
+            Seus dados não são comercializados, compartilhados com terceiros
+            alheios ao atendimento da academia nem armazenados em bancos
+            públicos no navegador. Você pode solicitar a atualização ou exclusão
+            do seu contato a qualquer momento pelos nossos canais oficiais.
+          </p>
+        </div>
+        <div class="mt-6 text-right">
+          <button
+            type="button"
+            @click="privacyModalOpen = false"
+            class="btn-secondary px-5 py-2.5 text-xs cursor-pointer"
+          >
+            Entendi
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
